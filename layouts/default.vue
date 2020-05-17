@@ -10,9 +10,9 @@
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
   <img
-    alt="Vuetify Logo"
+    alt="LogoMFU"
     src="../assets/pic/MFU.png"
-    class="mfuLogo"
+    class="LogoMFU"
   >
       <v-toolbar-title>Mae Fah Luang University</v-toolbar-title>
     </v-app-bar>
@@ -34,7 +34,7 @@
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Home</v-list-item-title>
+            <v-list-item-title><nuxt-link to="/Home">Home</nuxt-link></v-list-item-title>
           </v-list-item>
 
           <v-list-item>
@@ -50,7 +50,7 @@
   </v-card>
   </template>
 <style>
-.mfuLogo {
+.LogoMFU {
   margin: 5px;
   height:60px;
   width: 40px;

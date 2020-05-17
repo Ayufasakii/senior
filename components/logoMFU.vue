@@ -1,13 +1,13 @@
 <template>
   <img
-    class="VuetifyLogo"
-    alt="Vuetify Logo"
+    class="LogoMFU"
+    alt="LogoMFU"
     src="../assets/pic/MFU"
   >
 </template>
 
 <style>
-.VuetifyLogo {
+.LogoMFU {
   height:180px;
   width: 180px;
 }

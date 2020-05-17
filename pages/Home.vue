@@ -4,10 +4,10 @@
 </template>
 <script>
 export default {
-  layout: 'default',
+  layout: 'Copy',
   // OR
   layout (context) {
-    return 'default'
+    return 'Copy'
   }
 }
 </script>
