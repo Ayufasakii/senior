@@ -1,12 +1,12 @@
 <template>
  <v-card
     class="mx-auto overflow-hidden"
-    
+    height="900"
   >
     <v-app-bar
       color=#8c1515
       dark
-      height="60"
+      height="70"
     >
       <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
   <img
@@ -56,3 +56,16 @@
   width: 40px;
 }
   </style>
+  <script>
+  export default {
+    data: () => ({
+      drawer: false,
+      group: null,
+    }),
+    watch: {
+      group () {
+        this.drawer = false
+      },
+    },
+  }
+</script>
