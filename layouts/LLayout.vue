@@ -4,10 +4,11 @@
     height="900"
   >
     <v-app-bar
-      color=black
+      color=#8c1515
       dark
       height="70"
-    ><v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
+    >
+      <v-app-bar-nav-icon @click="drawer = true"></v-app-bar-nav-icon>
   <img
     alt="LogoMFU"
     src="../assets/pic/MFU.png"
@@ -15,7 +16,8 @@
   >
       <v-toolbar-title>Mae Fah Luang University</v-toolbar-title>
     </v-app-bar>
-  <nuxt-link to="/index">index</nuxt-link>
+
+    <nuxt/>
   </v-card>
   </template>
 <style>
@@ -25,3 +27,4 @@
   width: 40px;
 }
   </style>
+

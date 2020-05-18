@@ -30,12 +30,14 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
+        <nuxt-link class="nuxt-link" to="/SHome">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-list-item-title><nuxt-link to="/Home">Home</nuxt-link></v-list-item-title>
+            <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
+          </nuxt-link>
 
           <v-list-item>
             <v-list-item-icon>
@@ -44,18 +46,39 @@
             <v-list-item-title>Account</v-list-item-title>
           </v-list-item>
 
+          <nuxt-link class="nuxt-link" to="/SCT">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-pencil</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Edit</v-list-item-title>
+          </v-list-item>
+          </nuxt-link>
+
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
+
+    <nuxt/>
+
   </v-card>
+
   </template>
+
+
 <style>
 .LogoMFU {
   margin: 5px;
   height:60px;
   width: 40px;
 }
+
+.nuxt-link{
+     text-decoration: none;
+ }
   </style>
+
+
   <script>
   export default {
     data: () => ({

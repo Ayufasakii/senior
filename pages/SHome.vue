@@ -1,14 +1,14 @@
 <template>
 <div>
-  <nuxt-link to="/SHome">Login</nuxt-link>
+  <h1>Home</h1>
 </div>
 </template>
 <script>
 export default {
-  layout: 'LLayout',
+  layout: 'SLayout',
   // OR
   layout (context) {
-    return 'LLayout'
+    return 'SLayout'
   }
 }
 </script>
