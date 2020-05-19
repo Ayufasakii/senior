@@ -16,9 +16,9 @@
   >
       <v-toolbar-title>Mae Fah Luang University</v-toolbar-title>
         <v-spacer></v-spacer>
-      <v-btn icon>
-        <v-icon>mdi-logout</v-icon>
-      </v-btn>
+    <v-btn tile outlined color="success">
+    <v-icon left>mdi-logout</v-icon> Logout
+    </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -26,10 +26,7 @@
       absolute
       temporary
     >
-      <v-list
-        nav
-        dense
-      >
+      <v-list nav dense>
         <v-list-item-group
           v-model="group"
           active-class="deep-purple--text text--accent-4"
@@ -58,7 +55,6 @@
             <v-list-item-title>Create student information</v-list-item-title>
           </v-list-item>
           </nuxt-link>
-
 
           <nuxt-link class="nuxt-link" to="/SCT">
           <v-list-item>
