@@ -43,7 +43,7 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color=#8c1515>Login</v-btn>
+                <v-btn color=#8c1515 dark>Login</v-btn>
               </v-card-actions>
             </v-card>
 
