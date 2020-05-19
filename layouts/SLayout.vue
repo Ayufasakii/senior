@@ -42,13 +42,6 @@
           </v-list-item>
           </nuxt-link>
 
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-account-edit</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Create teacher accounts</v-list-item-title>
-          </v-list-item>
-
           <nuxt-link class="nuxt-link" to="/SCS">
           <v-list-item>
             <v-list-item-icon>
@@ -58,39 +51,21 @@
           </v-list-item>
           </nuxt-link>
 
-          <nuxt-link class="nuxt-link" to="/SCT">
+          <nuxt-link class="nuxt-link" to="/SSI">
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-pencil</v-icon>
+              <v-icon>mdi-account-search</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Edit teacher information</v-list-item-title>
+            <v-list-item-title>Student information</v-list-item-title>
           </v-list-item>
           </nuxt-link>
 
-          <nuxt-link class="nuxt-link" to="/SCT">
+          <nuxt-link class="nuxt-link" to="/STI">
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-pencil</v-icon>
+              <v-icon>mdi-account-search</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Edit student information</v-list-item-title>
-          </v-list-item>
-          </nuxt-link>
-
-          <nuxt-link class="nuxt-link" to="/SCT">
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-checkbox-marked</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>Approve cost form</v-list-item-title>
-          </v-list-item>
-          </nuxt-link>
-
-          <nuxt-link class="nuxt-link" to="/SCT">
-          <v-list-item>
-            <v-list-item-icon>
-              <v-icon>mdi-eye</v-icon>
-            </v-list-item-icon>
-            <v-list-item-title>See visit form</v-list-item-title>
+            <v-list-item-title>Teacher information</v-list-item-title>
           </v-list-item>
           </nuxt-link>
 

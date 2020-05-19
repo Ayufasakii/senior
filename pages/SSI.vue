@@ -1,5 +1,5 @@
 <template>
-    <v-app id="inspire">
+  <v-app id="inspire">
     <v-content>
       <v-container
         class="fill-height"
@@ -20,12 +20,13 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Information</v-toolbar-title>
+                <v-toolbar-title>Search Student Information</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
-             
+
               <v-card-text>
                 <v-row>
+
                 <v-col cols="12" sm="6">
                 <v-text-field
                 label="First name"
@@ -37,14 +38,14 @@
 
                 <v-col cols="12" sm="6">
                 <v-text-field
-                label="Last name"
+                label="Last Name"
                 outlined
                 dense
                 >
                 </v-text-field>
                 </v-col>
 
-                <v-col cols="12" sm="6" >
+                <v-col cols="12" sm="6">
                 <v-text-field
                 label="Student ID"
                 outlined
@@ -52,52 +53,13 @@
                 >
                 </v-text-field>
                 </v-col>
-                </v-row>
-
-                <v-row>
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="School"
-                label="School"
-                dense
-                outlined
-                ></v-select>
-                </v-col>
-                
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="Major"
-                label="Major"
-                dense
-                outlined
-                ></v-select>
-                </v-col>
-                <v-col cols="12" sm="6">
-                <v-text-field
-                label="Organization Name"
-                outlined
-                dense
-                >
-                </v-text-field>
-                </v-col>
-
-                <v-col cols="12" sm="6">
-                <v-textarea
-                auto-grow
-                label="Address"
-                outlined
-                dense
-                rows="3"
-                row-height="25"
-                ></v-textarea>
-                </v-col>
 
                 </v-row>
               </v-card-text>
-              
+
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color=#8c1515 dark>Submit</v-btn>
+                <v-btn color=#8c1515 dark>Search</v-btn>
               </v-card-actions>
             </v-card>
 
@@ -113,11 +75,6 @@ export default {
   // OR
   layout (context) {
     return 'SLayout'
-  },
-  data: () => ({
-      School: ['IT', 'Bar', 'Fizz', 'Buzz'],
-      Major: ['IT', 'CS', 'SE', 'Buzz'],
-    }),
-    
+  }
 }
 </script>
