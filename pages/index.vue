@@ -23,6 +23,7 @@
                 <v-toolbar-title>Login</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
+              
               <v-card-text>
                 <v-form>
                   <v-text-field
@@ -41,9 +42,10 @@
                   ></v-text-field>
                 </v-form>
               </v-card-text>
+             
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color=#8c1515 dark>Login</v-btn>
+                <nuxt-link class="nuxt-link" to="/SHome"><v-btn color=#8c1515 dark>Login</v-btn></nuxt-link>
               </v-card-actions>
             </v-card>
 
@@ -53,6 +55,8 @@
     </v-content>
   </v-app>
 </template>
+
+
 <script>
 export default {
   layout: 'LLayout',
@@ -65,3 +69,8 @@ export default {
   },
 }
 </script>
+
+
+<style>
+
+  </style>

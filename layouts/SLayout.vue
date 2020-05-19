@@ -16,9 +16,11 @@
   >
       <v-toolbar-title>Mae Fah Luang University</v-toolbar-title>
         <v-spacer></v-spacer>
+    <nuxt-link class="nuxt-link" to="/">
     <v-btn tile outlined color="success">
     <v-icon left>mdi-logout</v-icon> Logout
     </v-btn>
+    </nuxt-link>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -47,7 +49,7 @@
             <v-list-item-title>Create teacher accounts</v-list-item-title>
           </v-list-item>
 
-          <nuxt-link class="nuxt-link" to="/SCT">
+          <nuxt-link class="nuxt-link" to="/SCS">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-account-edit</v-icon>
