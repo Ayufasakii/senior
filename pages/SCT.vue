@@ -1,13 +1,14 @@
 <template>
 <div>
+  <h1>Edit</h1>
 </div>
 </template>
 <script>
 export default {
-  layout: 'Copy',
+  layout: 'SLayout',
   // OR
   layout (context) {
-    return 'Copy'
+    return 'SLayout'
   }
 }
 </script>
