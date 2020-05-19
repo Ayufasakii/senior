@@ -15,6 +15,11 @@
     class="LogoMFU"
   >
       <v-toolbar-title>Mae Fah Luang University</v-toolbar-title>
+    
+     <v-spacer></v-spacer>
+      <v-btn icon>
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer

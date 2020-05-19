@@ -15,6 +15,10 @@
     class="LogoMFU"
   >
       <v-toolbar-title>Mae Fah Luang University</v-toolbar-title>
+        <v-spacer></v-spacer>
+      <v-btn icon>
+        <v-icon>mdi-logout</v-icon>
+      </v-btn>
     </v-app-bar>
 
     <v-navigation-drawer
@@ -41,17 +45,54 @@
 
           <v-list-item>
             <v-list-item-icon>
-              <v-icon>mdi-account</v-icon>
+              <v-icon>mdi-account-edit</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Account</v-list-item-title>
+            <v-list-item-title>Create teacher accounts</v-list-item-title>
           </v-list-item>
+
+          <nuxt-link class="nuxt-link" to="/SCT">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-account-edit</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Create student information</v-list-item-title>
+          </v-list-item>
+          </nuxt-link>
+
 
           <nuxt-link class="nuxt-link" to="/SCT">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-pencil</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Edit</v-list-item-title>
+            <v-list-item-title>Edit teacher information</v-list-item-title>
+          </v-list-item>
+          </nuxt-link>
+
+          <nuxt-link class="nuxt-link" to="/SCT">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-pencil</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Edit student information</v-list-item-title>
+          </v-list-item>
+          </nuxt-link>
+
+          <nuxt-link class="nuxt-link" to="/SCT">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-checkbox-marked</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>Approve cost form</v-list-item-title>
+          </v-list-item>
+          </nuxt-link>
+
+          <nuxt-link class="nuxt-link" to="/SCT">
+          <v-list-item>
+            <v-list-item-icon>
+              <v-icon>mdi-eye</v-icon>
+            </v-list-item-icon>
+            <v-list-item-title>See visit form</v-list-item-title>
           </v-list-item>
           </nuxt-link>
 
