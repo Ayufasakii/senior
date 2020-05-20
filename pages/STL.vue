@@ -12,7 +12,7 @@
           <v-col
             cols="12"
             sm="8"
-            md="4"
+            md="6"
           >
             <v-card class="elevation-12">
               <v-toolbar
@@ -20,12 +20,18 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Home</v-toolbar-title>
+                <v-toolbar-title>List Teacher</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
+
               <v-card-text>
 
               </v-card-text>
+
+              <v-card-actions>
+                <v-spacer></v-spacer>
+                <nuxt-link class="nuxt-link" to="/STL"><v-btn color=#8c1515 dark>Search</v-btn></nuxt-link>
+              </v-card-actions>
             </v-card>
 
           </v-col>
@@ -34,6 +40,7 @@
     </v-content>
   </v-app>
 </template>
+
 <script>
 export default {
   layout: 'SLayout',

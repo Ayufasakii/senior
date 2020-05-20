@@ -59,7 +59,7 @@
 
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn color=#8c1515 dark>Search</v-btn>
+                <nuxt-link class="nuxt-link" to="/SSL"><v-btn color=#8c1515 dark>Search</v-btn></nuxt-link>
               </v-card-actions>
             </v-card>
 
