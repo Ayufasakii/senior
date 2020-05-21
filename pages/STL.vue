@@ -43,8 +43,6 @@
 
 <script>
 export default {
-  layout: 'SLayout',
-  // OR
   layout (context) {
     return 'SLayout'
   }

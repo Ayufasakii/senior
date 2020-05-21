@@ -35,19 +35,23 @@
           v-model="group"
           active-class="deep-purple--text text--accent-4"
         >
+          <nuxt-link class="nuxt-link" to="/THome">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-home</v-icon>
             </v-list-item-icon>
-            <v-list-item-title><nuxt-link to="/Home">Home</nuxt-link></v-list-item-title>
+            <v-list-item-title>Home</v-list-item-title>
           </v-list-item>
+          </nuxt-link>
 
+          <nuxt-link class="nuxt-link" to="/TAC">
           <v-list-item>
             <v-list-item-icon>
               <v-icon>mdi-account</v-icon>
             </v-list-item-icon>
-            <v-list-item-title>Account</v-list-item-title>
+            <v-list-item-title>Profile</v-list-item-title>
           </v-list-item>
+          </nuxt-link>
 
         </v-list-item-group>
       </v-list>
@@ -61,6 +65,9 @@
   height:60px;
   width: 40px;
 }
+.nuxt-link{
+     text-decoration: none;
+ }
   </style>
   <script>
   export default {

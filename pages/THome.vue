@@ -37,7 +37,7 @@
 <script>
 export default {
   layout (context) {
-    return 'SLayout'
+    return 'TLayout'
   }
 }
 </script>

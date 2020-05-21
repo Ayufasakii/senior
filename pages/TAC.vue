@@ -20,7 +20,7 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Information</v-toolbar-title>
+                <v-toolbar-title>Profile</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
              
@@ -29,9 +29,10 @@
                 <v-col cols="12" sm="6">
                 <v-text-field
                 label="First name"
+                value="John"
                 outlined
                 dense
-                required
+                disabled
                 >
                 </v-text-field>
                 </v-col>
@@ -39,19 +40,20 @@
                 <v-col cols="12" sm="6">
                 <v-text-field
                 label="Last name"
+                value="Doe"
                 outlined
                 dense
-                required
+                disabled
                 >
                 </v-text-field>
                 </v-col>
 
                 <v-col cols="12" sm="6" >
                 <v-text-field
-                label="Student ID"
+                label="Email"
                 outlined
                 dense
-                required
+                disabled
                 >
                 </v-text-field>
                 </v-col>
@@ -61,75 +63,45 @@
                 label="Mobile Phone"
                 outlined
                 dense
-                required
+                disabled
                 >
                 </v-text-field>
                 </v-col>
 
+                <v-col cols="12" sm="6" >
+                <v-text-field
+                label="Staff ID"
+                outlined
+                dense
+                disabled
+                >
+                </v-text-field>
+                </v-col>
                 </v-row>
 
                 <v-row>
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="School"
-                label="School"
-                dense
-                outlined
-                required
-                ></v-select>
-                </v-col>
-                
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="Major"
-                label="Major"
-                dense
-                outlined
-                required
-                >
-                </v-select>
-                </v-col>
-
-                <v-col cols="12" sm="6">
+                <v-col cols="12" sm="6" >
                 <v-text-field
-                label="Organization Name"
+                label="School"
                 outlined
                 dense
-                required
+                disabled
                 >
                 </v-text-field>
                 </v-col>
-
-                <v-col cols="12" sm="6">
-                <v-textarea
-                auto-grow
-                label="Address"
+                
+                <v-col cols="12" sm="6" >
+                <v-text-field
+                label="Major"
                 outlined
                 dense
-                rows="3"
-                row-height="25"
-                required
-                ></v-textarea>
-                </v-col>
-
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="Province"
-                label="Province"
-                dense
-                outlined
-                required
+                disabled
                 >
-                </v-select>
+                </v-text-field>
                 </v-col>
 
                 </v-row>
               </v-card-text>
-              
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <nuxt-link class="nuxt-link" to="/SSC"><v-btn color=#8c1515 dark>Submit</v-btn></nuxt-link>
-              </v-card-actions>
             </v-card>
 
           </v-col>
@@ -146,7 +118,6 @@ export default {
   data: () => ({
       School: ['IT', 'Bar', 'Fizz', 'Buzz'],
       Major: ['IT', 'CS', 'SE', 'Buzz'],
-      Province: ['Ang Thong', 'Amnat Charoen', 'Bueng Kan', 'Buriram'],
     }),
     
 }
