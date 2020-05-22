@@ -20,13 +20,15 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Search Teacher Information</v-toolbar-title>
+                <v-toolbar-title>Search Seacher Information</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
 
               <v-card>
                 <v-card-title>
                 <v-spacer></v-spacer>
+                
+                <v-col cols="12" sm="6" >
                 <v-text-field
                 v-model="search"
                 append-icon="mdi-magnify"
@@ -34,6 +36,8 @@
                 single-line
                 hide-details
                 ></v-text-field>
+                </v-col>
+
                 </v-card-title>
                 <v-data-table
                 :headers="headers"

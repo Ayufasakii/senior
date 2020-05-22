@@ -12,7 +12,7 @@
           <v-col
             cols="12"
             sm="8"
-            md="6"
+            md="8"
           >
             <v-card class="elevation-12">
               <v-toolbar
@@ -24,34 +24,27 @@
                 <v-spacer></v-spacer>
               </v-toolbar>
 
-              <v-card-text>
-                <v-row>
-
-                <v-col cols="12" sm="6">
-                <v-text-field
-                label="First name"
-                outlined
-                dense
-                >
-                </v-text-field>
-                </v-col>
-
-                <v-col cols="12" sm="6">
-                <v-text-field
-                label="Last Name"
-                outlined
-                dense
-                >
-                </v-text-field>
-                </v-col>
-
-                </v-row>
-              </v-card-text>
-
-              <v-card-actions>
+              <v-card>
+                <v-card-title>
                 <v-spacer></v-spacer>
-                <nuxt-link class="nuxt-link" to="/STL"><v-btn color=#8c1515 dark>Search</v-btn></nuxt-link>
-              </v-card-actions>
+                
+                <v-col cols="12" sm="6" >
+                <v-text-field
+                v-model="search"
+                append-icon="mdi-magnify"
+                label="Search"
+                single-line
+                hide-details
+                ></v-text-field>
+                </v-col>
+
+                </v-card-title>
+                <v-data-table
+                :headers="headers"
+                :items="desserts"
+                :search="search"
+                ></v-data-table>
+              </v-card>
             </v-card>
 
           </v-col>
@@ -64,6 +57,42 @@
 export default {
   layout (context) {
     return 'SLayout'
-  }
+  },
+  data () {
+      return {
+        search: '',
+        headers: [
+          {
+            text: 'Staff ID',
+            align: 'start',
+            value: 'ID',
+          },
+          { text: 'Name', value: 'name' },
+          { text: 'Major', value: 'major' },
+        ],
+        desserts: [
+          {
+            ID: '231456',
+            name: 'John Doe',
+            major: "IT",
+          },
+          {
+            ID: '130546',
+            name: 'Peter Parker',
+            major: "IT",
+          },
+          {
+            ID: '114356',
+            name: 'Jane J',
+            major: "SE",
+          },
+          {
+            ID: '154986',
+            name: 'Max Over',
+            major: "CE",
+          },
+        ],
+      }
+    },
 }
 </script>
