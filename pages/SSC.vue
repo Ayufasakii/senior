@@ -63,7 +63,6 @@
                 label="Mobile Phone"
                 outlined
                 dense
-                required
                 disabled
                 >
                 </v-text-field>
@@ -119,7 +118,6 @@
                 label="Province"
                 dense
                 outlined
-                required
                 disabled
                 >
                 </v-select>
