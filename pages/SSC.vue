@@ -57,6 +57,17 @@
                 >
                 </v-text-field>
                 </v-col>
+
+                <v-col cols="12" sm="6" >
+                <v-text-field
+                label="Mobile Phone"
+                outlined
+                dense
+                required
+                disabled
+                >
+                </v-text-field>
+                </v-col>
                 </v-row>
 
                 <v-row>
@@ -79,6 +90,7 @@
                 disabled
                 ></v-select>
                 </v-col>
+
                 <v-col cols="12" sm="6">
                 <v-text-field
                 label="Organization Name"
@@ -99,6 +111,18 @@
                 row-height="25"
                 disabled
                 ></v-textarea>
+                </v-col>
+
+                <v-col class="d-flex" cols="12" sm="6" >
+                <v-select
+                :items="Province"
+                label="Province"
+                dense
+                outlined
+                required
+                disabled
+                >
+                </v-select>
                 </v-col>
 
                 </v-row>
