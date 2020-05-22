@@ -44,7 +44,7 @@ app.get('/getIDandPass', (req, res) => {
   });
 })
 app.get('/getAllStudents', (req, res) => {
-  connection.query("SELECT * FROM student", function (err, result, fields) {
+  connection.query("SELECT S_ID,S_name,S_major FROM student", function (err, result, fields) {
     if (err) throw err;
     console.log(result);
     res.send(result)

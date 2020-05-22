@@ -37,7 +37,7 @@
                 </v-card-title>
                 <v-data-table
                 :headers="headers"
-                :items="desserts"
+                :items="student"
                 :search="search"
                 ></v-data-table>
               </v-card>
@@ -50,10 +50,16 @@
   </v-app>
 </template>
 <script>
+const axios = require('axios');
 export default {
   layout (context) {
     return 'SLayout'
   },
+      async asyncData({ params }) {
+        const { data } = await axios.get(`http://localhost:5010/getAllStudents`)
+        console.log(data)
+        return { students: data }
+    },
   data () {
       return {
         search: '',
@@ -61,29 +67,16 @@ export default {
           {
             text: 'Student ID',
             align: 'start',
-            value: 'ID',
+            value: 'S_ID',
           },
-          { text: 'Name', value: 'name' },
-          { text: 'Major', value: 'major' },
+          { text: 'Name', value: 'S_name' },
+          { text: 'Major', value: 'S_major' },
         ],
-        desserts: [
-          {
-            ID: '6031301001',
-            name: 'John Doe',
-            major: "IT",
-          },
-          {
-            ID: '6031301002',
-            name: 'Peter Parker',
-            major: "IT",
-          },
-          {
-            ID: '6031501002',
-            name: 'Jane J',
-            major: "SE",
-          },
-        ],
+        student: [],
       }
     },
+  created() {
+    this.student = this.students
+  }
 }
 </script>
