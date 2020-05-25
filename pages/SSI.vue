@@ -43,7 +43,21 @@
                 :headers="headers"
                 :items="student"
                 :search="search"
-                ></v-data-table>
+                >
+
+                <template v-slot:item.actions="{ item }">
+                <nuxt-link class="nuxt-link" to="/SSP">
+                <v-icon
+                small
+                class="mr-2"
+                @click="editItem(item)"
+                >
+                mdi-account-edit
+                </v-icon>
+                </nuxt-link>
+                </template>
+
+                </v-data-table>
               </v-card>
             </v-card>
 
@@ -75,12 +89,13 @@ export default {
           },
           { text: 'Name', value: 'S_name' },
           { text: 'Major', value: 'S_major' },
+          { text: 'Actions', value: 'actions', sortable: false },
         ],
         student: [],
       }
     },
   created() {
     this.student = this.students
-  }
+  },
 }
 </script>

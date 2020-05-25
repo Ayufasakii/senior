@@ -41,9 +41,23 @@
                 </v-card-title>
                 <v-data-table
                 :headers="headers"
-                :items="desserts"
+                :items="student"
                 :search="search"
-                ></v-data-table>
+                >
+
+                <template v-slot:item.actions="{ item }">
+                <nuxt-link class="nuxt-link" to="/SSP">
+                <v-icon
+                small
+                class="mr-2"
+                @click="editItem(item)"
+                >
+                mdi-account-edit
+                </v-icon>
+                </nuxt-link>
+                </template>
+
+                </v-data-table>
               </v-card>
             </v-card>
 
@@ -54,45 +68,34 @@
   </v-app>
 </template>
 <script>
+const axios = require('axios');
 export default {
   layout (context) {
     return 'SLayout'
   },
+      async asyncData({ params }) {
+        const { data } = await axios.get(`http://localhost:5010/getAllStudents`)
+        console.log(data)
+        return { students: data }
+    },
   data () {
       return {
         search: '',
         headers: [
           {
-            text: 'Staff ID',
+            text: 'Teacher ID',
             align: 'start',
-            value: 'ID',
+            value: 'S_ID',
           },
-          { text: 'Name', value: 'name' },
-          { text: 'Major', value: 'major' },
+          { text: 'Name', value: 'S_name' },
+          { text: 'Major', value: 'S_major' },
+          { text: 'Actions', value: 'actions', sortable: false },
         ],
-        desserts: [
-          {
-            ID: '231456',
-            name: 'John Doe',
-            major: "IT",
-          },
-          {
-            ID: '130546',
-            name: 'Peter Parker',
-            major: "IT",
-          },
-          {
-            ID: '114356',
-            name: 'Jane J',
-            major: "SE",
-          },
-          {
-            ID: '154986',
-            name: 'Max Over',
-            major: "CE",
-          },
-        ],
+        student: [],
       }
     },
+  created() {
+    this.student = this.students
+  },
 }
 </script>

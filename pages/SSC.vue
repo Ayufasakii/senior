@@ -100,6 +100,17 @@
                 </v-text-field>
                 </v-col>
 
+                <v-col class="d-flex" cols="12" sm="6" >
+                <v-select
+                :items="Province"
+                label="Province"
+                dense
+                outlined
+                disabled
+                >
+                </v-select>
+                </v-col>
+
                 <v-col cols="12" sm="6">
                 <v-textarea
                 auto-grow
@@ -112,24 +123,13 @@
                 ></v-textarea>
                 </v-col>
 
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="Province"
-                label="Province"
-                dense
-                outlined
-                disabled
-                >
-                </v-select>
-                </v-col>
-
                 </v-row>
               </v-card-text>
               
               <v-card-actions>
                 <nuxt-link class="nuxt-link" to="/SCS"><v-btn color=#8c1515 dark>Back</v-btn></nuxt-link>
                 <v-spacer></v-spacer>
-                <nuxt-link class="nuxt-link" to="/SHome"><v-btn color=#8c1515 dark>Confirm</v-btn></nuxt-link>
+                <nuxt-link class="nuxt-link" to="/SHome"><v-btn color=#8c1515 dark >Confirm</v-btn></nuxt-link>
               </v-card-actions>
             </v-card>
 
@@ -148,6 +148,5 @@ export default {
       School: ['IT', 'Bar', 'Fizz', 'Buzz'],
       Major: ['IT', 'CS', 'SE', 'Buzz'],
     }),
-    
 }
 </script>
