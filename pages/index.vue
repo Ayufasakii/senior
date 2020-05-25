@@ -20,7 +20,8 @@
 
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <v-btn color=#8c1515 dark @click="login()">Login</v-btn>
+                            <v-btn color=#8c1515 dark @click="loginS()">Login with Staff</v-btn>
+                            <v-btn color=#8c1515 dark @click="loginT()">Login with Teacher</v-btn>
                         </v-card-actions>
                     </v-card>
 
@@ -47,19 +48,17 @@ export default {
         }
     },
     async asyncData({ params }) {
-        const { data } = await axios.get(`http://localhost:5010/getIDandPass`)
-        return { idAndPass: data }
+        let dataS = await axios.get(`http://localhost:5010/getS_IDandPass`)
+        let dataT = await axios.get(`http://localhost:5010/getT_IDandPass`)
+        return { S_idAndPass: dataS.data,T_idAndPass: dataT.data }
     },
     methods: {
-        login: function () {
+        loginS: function () {
             let self = this
             let temp;
             let i;
-            console.log(self.idAndPass)
-            for (i = 0; i < self.idAndPass.length; i++) {
-                console.log(self.idAndPass[0].I_ID)
-                console.log(self.idAndPass.length)
-                if (self.id == self.idAndPass[i].I_ID && self.pass == self.idAndPass[i].I_password) {
+            for (i = 0; i < self.S_idAndPass.length; i++) {
+                if (self.id == self.S_idAndPass[i].I_ID && self.pass == self.S_idAndPass[i].I_password) {
                     temp = true
                     break;
                 } else {
@@ -68,6 +67,23 @@ export default {
             }
             if(temp){
               this.$router.push('/SHome')
+            }else{
+              alert('Invalid ID or Password!')
+            }
+        },loginT: function () {
+            let self = this
+            let temp;
+            let i;
+            for (i = 0; i < self.T_idAndPass.length; i++) {
+                if (self.id == self.T_idAndPass[i].T_ID && self.pass == self.T_idAndPass[i].T_password) {
+                    temp = true
+                    break;
+                } else {
+                    temp = false
+                }
+            }
+            if(temp){
+              this.$router.push('/THome')
             }else{
               alert('Invalid ID or Password!')
             }

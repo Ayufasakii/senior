@@ -41,7 +41,7 @@
                 </v-card-title>
                 <v-data-table
                 :headers="headers"
-                :items="student"
+                :items="teacher"
                 :search="search"
                 >
 
@@ -74,9 +74,9 @@ export default {
     return 'SLayout'
   },
       async asyncData({ params }) {
-        const { data } = await axios.get(`http://localhost:5010/getAllStudents`)
+        const { data } = await axios.get(`http://localhost:5010/getAllTeachers`)
         console.log(data)
-        return { students: data }
+        return { teacher: data }
     },
   data () {
       return {
@@ -85,10 +85,10 @@ export default {
           {
             text: 'Teacher ID',
             align: 'start',
-            value: 'S_ID',
+            value: 'T_ID',
           },
-          { text: 'Name', value: 'S_name' },
-          { text: 'Major', value: 'S_major' },
+          { text: 'Name', value: 'T_name' },
+          { text: 'Major', value: 'T_major' },
           { text: 'Actions', value: 'actions', sortable: false },
         ],
         student: [],

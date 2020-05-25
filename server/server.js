@@ -36,17 +36,27 @@ const express = require('express')
 const app = express()
 var cors = require('cors')
 app.use(cors())
-app.get('/getIDandPass', (req, res) => {
+app.get('/getT_IDandPass', (req, res) => {
+  connection.query("SELECT T_ID,T_password FROM teacher", function (err, result, fields) {
+    if (err) throw err;
+    res.send(result)
+  });
+})
+app.get('/getS_IDandPass', (req, res) => {
   connection.query("SELECT I_ID,I_password FROM internshipstaff", function (err, result, fields) {
     if (err) throw err;
-    console.log(result);
     res.send(result)
   });
 })
 app.get('/getAllStudents', (req, res) => {
   connection.query("SELECT S_ID,S_name,S_major FROM student", function (err, result, fields) {
     if (err) throw err;
-    console.log(result);
+    res.send(result)
+  });
+})
+app.get('/getAllTeachers', (req, res) => {
+  connection.query("SELECT T_ID,T_name,T_major FROM teacher", function (err, result, fields) {
+    if (err) throw err;
     res.send(result)
   });
 })
