@@ -144,8 +144,8 @@ export default {
     return 'SLayout'
   },
   data: () => ({
-      School: ['IT', 'Bar', 'Fizz', 'Buzz'],
-      Major: ['IT', 'CS', 'SE', 'Buzz'],
+      School: ['Agro-Industry', 'Anti-Aging and Regenerative Medicine', 'Cosmetic Science', 'Dentistry','Health Science','Information Teachnology','Integrative Medicine','Law','Liberal Arts','Management','Medicine','Nursing','Science','Sinology','Social of Innovation'],
+      Major: ['IT', 'CS', 'SE', 'CE'],
       Province: ['Ang Thong', 'Amnat Charoen', 'Bueng Kan', 'Buriram'],
     }),
     
