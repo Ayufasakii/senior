@@ -60,6 +60,28 @@ app.get('/getAllTeachers', (req, res) => {
     res.send(result)
   });
 })
+app.post('/createStudents', (req, res) => {
+  //get student info
+  let sID = req.body.sID 
+  let Sname = req.body.Sname 
+  let Stel = req.body.Stel 
+  let Smajor = req.body.Smajor 
+  let Sschool = req.body.Sschool
+  //get workplace info
+  let Wname = req.body.W_name
+  let Waddress = req.body.W_address 
+  let Wcontract = req.body.W_contract
+  let Wprovince = req.body.W_province
+  let sql1 = `INSERT INTO student(S_ID,S_name,S_tel,S_major,S_school) VALUES (${sID},${Sname},${Stel},${Smajor},${Sschool})`
+  let sql2 = `INSERT INTO workplace(W_name,W_address,W_contract,W_province) VALUES (${Wname},${Waddress},${Wcontract},${Wprovince})`
+  connection.query(sql1, function (err, result, fields) {
+    if (err) throw err;
+  });
+  connection.query(sql2, function (err, result, fields) {
+    if (err) throw err;
+  });
+  res.send('Create success')
+})
 app.listen(5010, () => {
   console.log('Start server at port 5010.')
 })
