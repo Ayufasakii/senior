@@ -20,7 +20,7 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Confirm Information</v-toolbar-title>
+                <v-toolbar-title>Teacher Proflie</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
              
@@ -50,7 +50,7 @@
 
                 <v-col cols="12" sm="6" >
                 <v-text-field
-                label="Student ID"
+                label="Staff ID"
                 outlined
                 dense
                 disabled
@@ -70,72 +70,45 @@
                 </v-row>
 
                 <v-row>
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="School"
-                label="School"
-                dense
+                <v-col cols="12" sm="6">
+                <v-text-field
+                label="Email"
+                value="IT"
                 outlined
+                dense
                 disabled
-                ></v-select>
+                >
+                </v-text-field>
                 </v-col>
                 
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="Major"
-                label="Major"
-                dense
+                <v-col cols="12" sm="6">
+                <v-text-field
+                label="School"
+                value="IT"
                 outlined
+                dense
                 disabled
-                ></v-select>
+                >
+                </v-text-field>
                 </v-col>
 
                 <v-col cols="12" sm="6">
                 <v-text-field
-                label="Organization Name"
+                label="Major"
+                value="IT"
                 outlined
                 dense
                 disabled
                 >
                 </v-text-field>
-                </v-col>
-
-                <v-col cols="12" sm="6">
-                <v-text-field label="Organization contact" 
-                outlined dense disabled>
-                </v-text-field>
-                </v-col>
-
-                <v-col class="d-flex" cols="12" sm="6" >
-                <v-select
-                :items="Province"
-                label="Province"
-                dense
-                outlined
-                disabled
-                >
-                </v-select>
-                </v-col>
-
-                <v-col cols="12" sm="6">
-                <v-textarea
-                auto-grow
-                label="Address"
-                outlined
-                dense
-                rows="3"
-                row-height="25"
-                disabled
-                ></v-textarea>
                 </v-col>
 
                 </v-row>
               </v-card-text>
               
               <v-card-actions>
-                <v-btn color=#8c1515 dark to="/SCS">Back</v-btn>
                 <v-spacer></v-spacer>
-                <v-btn color=#8c1515 dark @click="Goto(page)">Confirm</v-btn>
+                <nuxt-link class="nuxt-link" to="/SHome"><v-btn color=#8c1515 dark>Edit</v-btn></nuxt-link>
               </v-card-actions>
             </v-card>
 
@@ -149,16 +122,6 @@
 export default {
   layout (context) {
     return 'SLayout'
-  },
-  data: () => ({
-      School: ['Agro-Industry', 'Anti-Aging and Regenerative Medicine', 'Cosmetic Science', 'Dentistry','Health Science','Information Teachnology','Integrative Medicine','Law','Liberal Arts','Management','Medicine','Nursing','Science','Sinology','Social of Innovation'],
-      Major: ['IT', 'CS', 'SE', 'CE'],
-    }),
-  methods: {
-  Goto(page) {
-        confirm('Are you sure you want to delete this item?')
-        this.$router.push('/SHome')
-      },
-  }
+  },   
 }
 </script>
