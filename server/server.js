@@ -88,10 +88,36 @@ app.post('/createStudents', (req, res) => {
   });
   res.send('Create success')
 })
+app.post('/createTeacher', (req, res) => {
+  //get student info
+  let TID = req.body.TID
+  let Tname = req.body.Tname 
+  let Ttel = req.body.Ttel
+  let Tmajor = req.body.Tmajor 
+  let Tschool = req.body.Tschool
+  let Temail = req.body.Temail
+  let Tpass = req.body.Tpass
+  let sql1 = `INSERT INTO teacher(T_ID,T_name,T_password,T_major,T_school,T_email,T_tel) VALUES ('${TID}','${Tname}','${Tpass}','${Tmajor}','${Tschool}','${Temail}','${Ttel}')`
+  connection.query(sql1, function (err, result, fields) {
+    console.log(err)
+    if (err) throw err;
+  });
+  res.send('Create success')
+})
 app.delete('/deleteStudent', (req, res) => {
   //get student info
   let sID = req.body.sID 
   let sql1 = `DELETE FROM student WHERE S_ID = '${sID}'`
+  connection.query(sql1, function (err, result, fields) {
+    console.log(err)
+    if (err) throw err;
+  });
+  res.send('Delete success')
+})
+app.delete('/deleteTeacher', (req, res) => {
+  //get student info
+  let TID = req.body.TID 
+  let sql1 = `DELETE FROM teacher WHERE T_ID = '${TID}'`
   connection.query(sql1, function (err, result, fields) {
     console.log(err)
     if (err) throw err;

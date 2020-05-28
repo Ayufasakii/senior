@@ -82,7 +82,7 @@ export default {
       async asyncData({ params }) {
         const { data } = await axios.get(`http://localhost:5010/getAllTeachers`)
         console.log(data)
-        return { teacher: data }
+        return { teachers: data }
     },
   data () {
       return {
@@ -97,16 +97,25 @@ export default {
           { text: 'Major', value: 'T_major' },
           { text: 'Actions', value: 'actions', sortable: false },
         ],
-        student: [],
+        TID:null,
+        teacher: [],
       }
     },
   created() {
-    this.student = this.students
+    this.teacher = this.teachers
   },
   methods: {
   deleteItem (item) {
-        const index = this.desserts.indexOf(item)
-        confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+        const index = this.teacher.indexOf(item)
+        this.TID = this.teacher[index].T_ID
+        confirm('Are you sure you want to delete this item?') && axios({
+                method: 'delete', 
+                url: `http://localhost:5010/deleteTeacher`,
+                data: {
+                    TID:this.TID ,
+                }
+            });
+            location.reload();
       },
   }
 }
