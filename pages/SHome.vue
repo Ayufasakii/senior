@@ -35,9 +35,13 @@
   </v-app>
 </template>
 <script>
+
 export default {
   layout (context) {
     return 'SLayout'
-  }
+  },created() {
+    sessionStorage.removeItem('Cstatus')
+    sessionStorage.removeItem('Cdata')
+    },
 }
 </script>

@@ -98,6 +98,7 @@ export default {
           { text: 'Actions', value: 'actions', sortable: false },
         ],
         student: [],
+        sID:null
       }
     },
   created() {
@@ -105,8 +106,17 @@ export default {
   },
   methods: {
   deleteItem (item) {
-        const index = this.desserts.indexOf(item)
-        confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+        const index = this.student.indexOf(item)
+        this.sID = this.student[index].S_ID
+        console.log(this.student[index].S_ID)
+        confirm('Are you sure you want to delete this item?') && axios({
+                method: 'delete', 
+                url: `http://localhost:5010/deleteStudent`,
+                data: {
+                    sID:this.sID ,
+                }
+            });
+            location.reload();
       },
   }
 }

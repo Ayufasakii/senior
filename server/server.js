@@ -35,6 +35,10 @@ handleDisconnect();
 const express = require('express')
 const app = express()
 var cors = require('cors')
+const bodyParser = require('body-parser')
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({ extended: true }))
 app.use(cors())
 app.get('/getT_IDandPass', (req, res) => {
   connection.query("SELECT T_ID,T_password FROM teacher", function (err, result, fields) {
@@ -64,7 +68,7 @@ app.post('/createStudents', (req, res) => {
   //get student info
   let sID = req.body.sID 
   let Sname = req.body.Sname 
-  let Stel = req.body.Stel 
+  let Stel = req.body.Stel
   let Smajor = req.body.Smajor 
   let Sschool = req.body.Sschool
   //get workplace info
@@ -72,15 +76,27 @@ app.post('/createStudents', (req, res) => {
   let Waddress = req.body.W_address 
   let Wcontract = req.body.W_contract
   let Wprovince = req.body.W_province
-  let sql1 = `INSERT INTO student(S_ID,S_name,S_tel,S_major,S_school) VALUES (${sID},${Sname},${Stel},${Smajor},${Sschool})`
-  let sql2 = `INSERT INTO workplace(W_name,W_address,W_contract,W_province) VALUES (${Wname},${Waddress},${Wcontract},${Wprovince})`
+  let sql1 = `INSERT INTO student(S_ID,S_name,S_tel,S_major,S_school) VALUES ('${sID}','${Sname}','${Stel}','${Smajor}','${Sschool}')`
+  let sql2 = `INSERT INTO workplace(W_name,W_address,W_contract,W_province) VALUES ('${Wname}','${Waddress}','${Wcontract}','${Wprovince}')`
   connection.query(sql1, function (err, result, fields) {
+    console.log(err)
     if (err) throw err;
   });
   connection.query(sql2, function (err, result, fields) {
+    console.log(err)
     if (err) throw err;
   });
   res.send('Create success')
+})
+app.delete('/deleteStudent', (req, res) => {
+  //get student info
+  let sID = req.body.sID 
+  let sql1 = `DELETE FROM student WHERE S_ID = '${sID}'`
+  connection.query(sql1, function (err, result, fields) {
+    console.log(err)
+    if (err) throw err;
+  });
+  res.send('Delete success')
 })
 app.listen(5010, () => {
   console.log('Start server at port 5010.')
