@@ -55,6 +55,12 @@
                 mdi-account-edit
                 </v-icon>
                 </nuxt-link>
+                <v-icon
+                small
+                @click="deleteItem(item)"
+                >
+                mdi-delete
+                </v-icon>
                 </template>
 
                 </v-data-table>
@@ -97,5 +103,11 @@ export default {
   created() {
     this.student = this.students
   },
+  methods: {
+  deleteItem (item) {
+        const index = this.desserts.indexOf(item)
+        confirm('Are you sure you want to delete this item?') && this.desserts.splice(index, 1)
+      },
+  }
 }
 </script>

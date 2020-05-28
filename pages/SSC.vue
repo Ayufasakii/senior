@@ -127,9 +127,9 @@
               </v-card-text>
               
               <v-card-actions>
-                <nuxt-link class="nuxt-link" to="/SCS"><v-btn color=#8c1515 dark>Back</v-btn></nuxt-link>
+                <v-btn color=#8c1515 dark to="/SCS">Back</v-btn>
                 <v-spacer></v-spacer>
-                <nuxt-link class="nuxt-link" to="/SHome"><v-btn color=#8c1515 dark >Confirm</v-btn></nuxt-link>
+                <v-btn color=#8c1515 dark to="/SHome" >Confirm</v-btn>
               </v-card-actions>
             </v-card>
 
