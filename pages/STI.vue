@@ -46,7 +46,7 @@
                 >
 
                 <template v-slot:item.actions="{ item }">
-                <nuxt-link class="nuxt-link" to="/SSP">
+                <nuxt-link class="nuxt-link" to="/STP">
                 <v-icon
                 small
                 class="mr-2"
