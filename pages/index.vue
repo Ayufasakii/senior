@@ -19,8 +19,8 @@
                         </v-card-text>
 
                         <v-card-actions>
-                            <v-spacer></v-spacer>
                             <v-btn color=#8c1515 dark @click="loginS()">Login with Staff</v-btn>
+                            <v-spacer></v-spacer>
                             <v-btn color=#8c1515 dark @click="loginT()">Login with Teacher</v-btn>
                         </v-card-actions>
                     </v-card>

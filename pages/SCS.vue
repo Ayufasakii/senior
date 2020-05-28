@@ -13,22 +13,38 @@
                         <v-card-text>
                             <v-row>
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="First name" outlined dense required>
+                                    <v-text-field label="First name" 
+                                    ref="Fname"
+                                    v-model="Fname"
+                                    :rules="[() => !!Fname || 'This field is required']" 
+                                    outlined dense required>
                                     </v-text-field>
                                 </v-col>
 
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Last name" outlined dense required>
+                                    <v-text-field label="Last name"
+                                    ref="Lname"
+                                    v-model="Lname"
+                                    :rules="[() => !!Lname || 'This field is required']" 
+                                    outlined dense required>
                                     </v-text-field>
                                 </v-col>
 
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Student ID" outlined dense required>
+                                    <v-text-field label="Student ID" 
+                                    ref="SID"
+                                    v-model="SID"
+                                    :rules="[() => !!SID || 'This field is required']"
+                                    outlined dense required>
                                     </v-text-field>
                                 </v-col>
 
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Mobile Phone" outlined dense required>
+                                    <v-text-field label="Mobile Phone" 
+                                    ref="MPhone"
+                                    v-model="MPhone"
+                                    :rules="[() => !!MPhone || 'This field is required']"
+                                    outlined dense required>
                                     </v-text-field>
                                 </v-col>
 
@@ -36,7 +52,9 @@
 
                             <v-row>
                                 <v-col class="d-flex" cols="12" sm="6">
-                                    <v-select :items="School" label="School" v-model="selectedSchool" @input="schoolSelect" dense outlined required></v-select>
+                                    <v-select :items="School" label="School" 
+                                    v-model="selectedSchool" @input="schoolSelect" 
+                                    dense outlined required></v-select>
                                 </v-col>
 
                                 <v-col class="d-flex" cols="12" sm="6">
@@ -45,7 +63,20 @@
                                 </v-col>
 
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Organization Name" outlined dense required>
+                                    <v-text-field label="Organization Name" 
+                                    ref="Oname"
+                                    v-model="Oname"
+                                    :rules="[() => !!Oname || 'This field is required']"
+                                    outlined dense required>
+                                    </v-text-field>
+                                </v-col>
+
+                                <v-col cols="12" sm="6">
+                                    <v-text-field label="Organization contact" 
+                                    ref="Contact"
+                                    v-model="Contact"
+                                    :rules="[() => !!Contact || 'This field is required']"
+                                    outlined dense required>
                                     </v-text-field>
                                 </v-col>
 
@@ -55,7 +86,11 @@
                                 </v-col>
 
                                 <v-col cols="12" sm="6">
-                                    <v-textarea auto-grow label="Address" outlined dense rows="3" row-height="25" required></v-textarea>
+                                    <v-textarea auto-grow label="Address" 
+                                    ref="Address"
+                                    v-model="Address"
+                                    :rules="[() => !!Address || 'This field is required']"
+                                    outlined dense rows="3" row-height="25" required></v-textarea>
                                 </v-col>
 
                             </v-row>
@@ -63,9 +98,7 @@
 
                         <v-card-actions>
                             <v-spacer></v-spacer>
-                            <nuxt-link class="nuxt-link" to="/SSC">
-                                <v-btn color=#8c1515 dark>Submit</v-btn>
-                            </nuxt-link>
+                                <v-btn to="/SSC" color=#8c1515 @click="submit" dark>Submit</v-btn>
                         </v-card-actions>
                     </v-card>
 
@@ -86,14 +119,14 @@ export default {
         Major: [],
         selectedSchool: null,
         selectedMajor: null,
-        Province: ['krabi', 'bangkok', 'kanchanaburi', 'kalasin', 'kamphaengphet', 'khonkaen', 'chanthaburi', 'chachoengsao', 'chonburi', 'chainat',
-            'chaiyaphum','chumphon','chiangrai','chiangmai','trang','trat','tak','nakhonnayok','nakhonpathom','nakhonphanom','nakhonratchasima',
-            'nakhonsithammarat','nakhonsawan','nonthaburi','narathiwat','nan','buriram','pathumthani','prachuapkhirikhan','prachinburi',
-            'pattani','ayutthaya','phayao','phangnga','phatthalung','phichit','phitsanulok','phetchaburi','phetchabun','phrae',
-            'phuket','mahasarakham','mukdahan','maehongson','yasothon','yala','roiet','ranong','rayong','ratchaburi','lopburi',
-            'loei','lampang','lamphun','sisaket','sakonnakhon','songkhla','satun','samutprakan','samutsongkhram','samutsakhon','sakaeo','saraburi',
-            'singburi','sukhothai','suphanburi','suratthani','surin','nongkhai','nongbualamphu','angthong','amnatcharoen','udonthani',
-            'uttaradit','uthaithani','ubonratchathani','betong'
+        Province: ['Krabi', 'Bangkok', 'Kanchanaburi', 'Kalasin', 'Kamphaengphet', 'Khonkaen', 'Chanthaburi', 'Chachoengsao', 'Chonburi', 'Chainat',
+            'Chaiyaphum','Chumphon','Chiangrai','Chiangmai','Trang','Trat','Tak','Nakhonnayok','Nakhonpathom','Nakhonphanom','Nakhonratchasima',
+            'Nakhonsithammarat','Nakhonsawan','Nonthaburi','Narathiwat','Nan','Buriram','Pathumthani','Prachuapkhirikhan','Prachinburi',
+            'Pattani','Ayutthaya','Phayao','Phangnga','Phatthalung','Phichit','Phitsanulok','Phetchaburi','Phetchabun','Phrae',
+            'Phuket','Mahasarakham','Mukdahan','Maehongson','Yasothon','Yala','Roiet','Ranong','Rayong','Ratchaburi','Lopburi',
+            'Loei','Lampang','Lamphun','Sisaket','Sakonnakhon','Songkhla','Satun','Samutprakan','Samutsongkhram','Samutsakhon','Sakaeo','Saraburi',
+            'Singburi','Sukhothai','Suphanburi','Suratthani','Surin','Nongkhai','Nongbualamphu','Angthong','Amnatcharoen','Udonthani',
+            'Uttaradit','Uthaithani','Ubonratchathani','Betong','Other'
         ],
     }),
     methods: {
@@ -130,7 +163,7 @@ export default {
             } else if (self.selectedSchool == "Social of Innovation") {
                 self.Major = ["International Development"]
             }
-        }
+        },
     }
 
 }
