@@ -113,7 +113,7 @@
 <script>
 export default {
   layout (context) {
-    return 'SLayout'
+    return 'TLayout'
   },
   data: () => ({
       School: ['IT', 'Bar', 'Fizz', 'Buzz'],
