@@ -60,6 +60,24 @@
                     </v-list-item>
                 </nuxt-link>
 
+                <nuxt-link class="nuxt-link" to="/SVF">
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-account-search</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>See visit forms</v-list-item-title>
+                    </v-list-item>
+                </nuxt-link>
+
+                <nuxt-link class="nuxt-link" to="/SCF">
+                    <v-list-item>
+                        <v-list-item-icon>
+                            <v-icon>mdi-account-search</v-icon>
+                        </v-list-item-icon>
+                        <v-list-item-title>See cost forms</v-list-item-title>
+                    </v-list-item>
+                </nuxt-link>
+
             </v-list-item-group>
         </v-list>
     </v-navigation-drawer>
@@ -81,7 +99,6 @@
 }
 </style>
 
-  
 <script>
 export default {
     data: () => ({

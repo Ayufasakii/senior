@@ -83,7 +83,9 @@ export default {
                 }
             }
             if(temp){
+                sessionStorage.setItem('TID',self.id)
               this.$router.push('/THome')
+              
             }else{
               alert('Invalid ID or Password!')
             }
