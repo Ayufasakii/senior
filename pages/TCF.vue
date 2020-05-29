@@ -102,6 +102,7 @@ export default {
     data() {
         return {
             search: '',
+            picker: new Date().toISOString().substr(0, 10),
             headers: [{
                     text: 'Student ID',
                     align: 'start',
@@ -114,15 +115,10 @@ export default {
                 { text: 'Actions', value: 'actions', sortable: true },
             ],
             student: [],
+            menu: false,
             sID: null
         }
     },
-        data: () => ({
-      date: new Date().toISOString().substr(0, 10),
-      menu: false,
-      modal: false,
-      menu2: false,
-    }),
     created() {
         this.student = this.students
     },

@@ -17,7 +17,7 @@
         ref="menu"
         v-model="menu"
         :close-on-content-click="false"
-        :return-value.sync="date"
+        :return-value.sync="picker"
         transition="scale-transition"
         offset-y
         min-width="290px"
@@ -114,16 +114,10 @@ export default {
                 { text: 'Actions', value: 'actions', sortable: true },
             ],
             student: [],
-            sID: null
-            
+            sID: null,
+            menu: false,
         }
     },
-    data: () => ({
-      date: new Date().toISOString().substr(0, 10),
-      menu: false,
-      modal: false,
-      menu2: false,
-    }),
     created() {
         this.student = this.students
     },

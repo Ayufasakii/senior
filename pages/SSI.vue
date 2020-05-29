@@ -20,7 +20,7 @@
                 dark
                 flat
               >
-                <v-toolbar-title>Search Seacher Information</v-toolbar-title>
+                <v-toolbar-title>Search Student Information</v-toolbar-title>
                 <v-spacer></v-spacer>
               </v-toolbar>
 
