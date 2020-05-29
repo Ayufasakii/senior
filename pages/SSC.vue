@@ -48,12 +48,12 @@
                                 </v-col>
 
                                 <v-col cols="12" sm="6">
-                                    <v-text-field label="Organization contact" outlined dense disabled>
+                                    <v-text-field v-model="Contact" label="Organization contact" outlined dense disabled>
                                     </v-text-field>
                                 </v-col>
 
                                 <v-col class="d-flex" cols="12" sm="6">
-                                    <v-select :items="Province" v-model="SProvince" label="Province" dense outlined disabled>
+                                    <v-select :items="SProvince" v-model="SProvince" label="Province" dense outlined disabled>
                                     </v-select>
                                 </v-col>
 
