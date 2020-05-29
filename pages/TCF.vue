@@ -11,10 +11,36 @@
                         </v-toolbar>
 
                         <v-card-text>
-                            <v-row justify="center">
-                                <v-date-picker v-model="picker" color=#8c1515></v-date-picker>
+                            <v-row>
+      <v-col cols="12" sm="6">
+      <v-menu
+        ref="menu"
+        v-model="menu"
+        :close-on-content-click="false"
+        :return-value.sync="date"
+        transition="scale-transition"
+        offset-y
+        min-width="290px"
+      >
+        <template v-slot:activator="{ on }">
+          <v-text-field
+            v-model="date"
+            label="Picker in menu"
+            prepend-icon=""
+            readonly
+            dense
+            outlined
+            v-on="on"
+          ></v-text-field>
+        </template>
+        <v-date-picker v-model="date" no-title scrollable>
+          <v-spacer></v-spacer>
+          <v-btn text color="primary" @click="menu = false">Cancel</v-btn>
+          <v-btn text color="primary" @click="$refs.menu.save(date)">OK</v-btn>
+        </v-date-picker>
+      </v-menu>
+        </v-col>
 
-                            </v-row>
                             <v-col cols="12" sm="6">
                                 <v-text-field label="Teacher Name" v-model="Tname" outlined dense disabled>
                                 </v-text-field>
@@ -30,6 +56,8 @@
                                 </v-text-field>
 
                             </v-col>
+                            </v-row>
+                            
                             <v-data-table :headers="headers" :items="student" :search="search">
 
                                 <template v-slot:item.actions="{ item }">
@@ -89,6 +117,12 @@ export default {
             sID: null
         }
     },
+        data: () => ({
+      date: new Date().toISOString().substr(0, 10),
+      menu: false,
+      modal: false,
+      menu2: false,
+    }),
     created() {
         this.student = this.students
     },
