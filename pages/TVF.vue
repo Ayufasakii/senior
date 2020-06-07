@@ -57,6 +57,20 @@
 
                             </v-col>
                             </v-row>
+
+                            <v-row>
+                            <v-spacer></v-spacer>
+                            <v-col cols="12" sm="6" >
+                            <v-text-field
+                            v-model="search"
+                            append-icon="mdi-magnify"
+                            label="Search"
+                            single-line
+                            hide-details
+                            ></v-text-field>
+                            </v-col>
+                            </v-row>
+                            
                             <v-data-table :headers="headers" :items="student" :search="search">
 
                                 <template v-slot:item.actions="{ item }">
